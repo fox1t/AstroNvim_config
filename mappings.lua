@@ -25,7 +25,6 @@ return {
     ["<leader>fd"] = { "<cmd>Telescope dir live_grep<CR>", desc = "Find words in directory" },
     ["<leader>pd"] = { "<cmd>Telescope dir find_files<CR>", desc = "Find files in directory" },
     ["gR"] = { "<cmd>TroubleToggle lsp_references<cr>", desc = "TroubleToggle LSP references" },
-    ["<leader>-"] = { require("oil").open, desc = "Open oil" },
   },
   t = {
     -- setting a mapping to false will disable it

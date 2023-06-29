@@ -10,4 +10,5 @@ return {
   { import = "astrocommunity.git.git-blame-nvim" },
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.pack.lua" },
+  { import = "astrocommunity.file-explorer.oil-nvim" },
 }
