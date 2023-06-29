@@ -69,6 +69,15 @@ return {
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
+    -- deactivate diagnostics for node_modules
+    local ag = vim.api.nvim_create_augroup
+    local au = vim.api.nvim_create_autocmd
+    local disable_node_modules_eslint_group = ag("DisableNodeModulesEslint", { clear = true })
+    au({ "BufNewFile", "BufRead" }, {
+      pattern = { "**/node_modules/**", "node_modules", "/node_modules/*" },
+      callback = function() vim.diagnostic.disable(0) end,
+      group = disable_node_modules_eslint_group,
+    })
     -- Set up custom filetypes
     -- vim.filetype.add {
     --   extension = {
